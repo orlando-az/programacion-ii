@@ -33,5 +33,17 @@ Abrir la terminal en VS Code:
 Ejecutar el siguiente comando:
 
 ```bash
-dotnet new console
+dotnet new console -n MiProyecto
+```
+
+## ⚙️ 2. Ejecutar proyecto en C#
+
+Abrir la terminal en VS Code:
+
+- Atajo: `Ctrl + ñ` o `Ctrl + ``
+
+Ejecutar el siguiente comando:
+
+```bash
+dotnet run
 ```

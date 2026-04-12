@@ -6,7 +6,7 @@ Repositorio oficial de apoyo para la asignatura **Programación II**, orientado 
 
 ## 👨‍🏫 Docente
 
-**Nombre:** Isaac  
+**Nombre:** Orlando Isaac Aguilera Zambrana  
 **Carrera:** Ingeniería de Sistemas  
 **Área:** Desarrollo de Software
 
