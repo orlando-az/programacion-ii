@@ -1,105 +1,61 @@
-# 🧩 Práctica de Clase – Día 2: Arreglos (Aplicación)
+# Evaluación en clase — Arreglos con ciclo `for` — C#
 
-## 🎯 Objetivo
-
-Aplicar lo aprendido en clase sobre arreglos, índices y acceso a elementos, resolviendo ejercicios similares de forma autónoma.
-
----
-
-## 📌 Indicaciones
-
-- Trabaja de forma individual
-- No usar ciclos (`for`)
-- Acceder a los elementos usando índices
-- Seguir la misma lógica vista en clase
+### Instrucciones
+- Resuelve cada ejercicio de forma independiente
+- Usa únicamente ciclos `for`, arreglos y condicionales
+- No uses métodos de librería (Sort, Min, Max, etc.)
 
 ---
 
-## 🔰 Ejercicios de práctica
+## Ejercicio 1 — Suma de extremos
 
-### Ejercicio 1
+Crear un arreglo de 6 números enteros. Mostrar la suma del primer elemento con el último, la suma del segundo con el penúltimo, y la suma del tercero con el antepenúltimo.
 
-Crear un arreglo de 6 números enteros, asignar valores manualmente y mostrar:
-
-- El primer elemento
-- El tercer elemento
-- El último elemento
+```csharp
+// Tu solución aquí
+```
 
 ---
 
-### Ejercicio 2
+## Ejercicio 2 — Contar aprobados y reprobados
 
-Crear un arreglo de 4 nombres y mostrar:
+Crear un arreglo de 8 calificaciones (números del 0 al 100). Con un ciclo, contar cuántos alumnos aprobaron (calificación mayor o igual a 60) y cuántos reprobaron. Mostrar ambos conteos.
 
-- El primer nombre
-- El último nombre
-
----
-
-### Ejercicio 3
-
-Crear un arreglo de 5 números y:
-
-- Cambiar el valor del primer elemento
-- Cambiar el valor del último elemento
-- Mostrar el arreglo actualizado
+```csharp
+// Tu solución aquí
+```
 
 ---
 
-### Ejercicio 4
+## Ejercicio 3 — Calificación más alta y más baja
 
-Crear un arreglo de 3 números y mostrar:
+Crear un arreglo de 8 calificaciones. Encontrar en un solo recorrido la calificación más alta y la más baja. Mostrar ambas.
 
-- La suma del primer y segundo elemento
-
----
-
-### Ejercicio 5
-
-Crear un arreglo de 4 números y:
-
-- Mostrar cuál es mayor entre el primer y el último elemento
+```csharp
+// Tu solución aquí
+```
 
 ---
 
-### Ejercicio 6
+## Ejercicio 4 — Promedio y cuántos están por debajo
 
-Crear un arreglo de 5 elementos y mostrar:
+Crear un arreglo de 7 números. Calcular el promedio del arreglo y luego mostrar cuántos elementos están por debajo de ese promedio. Mostrar también el promedio.
 
-- El elemento en la posición 1
-- El elemento en la posición 3
-
----
-
-### Ejercicio 7
-
-Crear un arreglo de 3 nombres y:
-
-- Reemplazar el segundo nombre por otro
-- Mostrar todos los elementos
+```csharp
+// Tu solución aquí
+```
 
 ---
 
-### Ejercicio 8
+## Ejercicio 5 — Arreglo equilibrado
 
-Crear un arreglo de 4 números y mostrar:
+Crear un arreglo de 8 números. Calcular la suma de la primera mitad y la suma de la segunda mitad.
 
-- La resta entre el último y el primer elemento
+- Si la diferencia entre ambas sumas es menor a 5, mostrar `"Arreglo equilibrado"`
+- Si no, mostrar cuál mitad tiene mayor suma y por cuánto
 
----
-
-### Ejercicio 9
-
-Crear un arreglo de 3 números y mostrar:
-
-- Si el segundo elemento es mayor que el primero
-
----
-
-### Ejercicio 10 (Reto básico)
-
-Crear un arreglo de 5 números y mostrar:
-
-- La suma del primer, tercer y último elemento
+```csharp
+// Tu solución aquí
+```
 
 ---
