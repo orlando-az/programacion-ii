@@ -303,7 +303,129 @@ Resultado: 2 4 6 8 10 9 7 5 3 1
 > 💡 **Pista:** este ejercicio se puede resolver en varias etapas. Primero, contar cuántos pares e impares hay para crear los arreglos auxiliares del tamaño correcto. Luego, separar los elementos. Después, aplicar Selección sobre cada grupo cambiando la comparación (`<` o `>`) según la opción del usuario. Finalmente, copiar ambos arreglos en secuencia al arreglo resultado.
 
 ```csharp
-// Solución aquí
+Console.WriteLine("El tamaño del vector");
+int n = int.Parse(Console.ReadLine());
+
+int[] numeros = new int[n];
+
+//CARGAR EL VECTOR
+for (int i = 0; i < numeros.Length; i++)
+{
+    Console.WriteLine($"Ingrese los valores en la posicion {i}:");
+    int valor = int.Parse(Console.ReadLine());
+    numeros[i]=valor;
+}
+
+Console.WriteLine("¿Orden de los pares? Menor a mayor (1) o Mayor a menor (2):");
+int orden_p= int.Parse(Console.ReadLine());
+
+Console.WriteLine("¿Orden de los impares? Menor a mayor (1) o Mayor a menor (2):");
+int orden_imp= int.Parse(Console.ReadLine());
+
+//Contar pares e impares
+int con_p=0, con_imp=0;
+for (int i = 0; i < numeros.Length; i++)
+{
+    if(numeros[i]%2==0)
+        con_p++;
+    else
+        con_imp++;
+}
+
+int[] pares= new int[con_p];
+int[] impares= new int[con_imp];
+
+// Cargar Vectores
+int pp=0; int pi=0;
+for (int i = 0; i < numeros.Length; i++)
+{
+    if(numeros[i]%2==0)
+    {
+        pares[pp]= numeros[i];
+        pp++;
+    }
+    else
+    {
+        impares[pi]=numeros[i];
+        pi++;
+    }
+}
+
+//Ordenar Pares
+
+for (int i = 0; i < pares.Length-1; i++)
+{
+    int pos = i;
+
+    for (int j = i+1; j < pares.Length; j++)
+    {
+        if (orden_p == 1)
+        {
+            if(pares[j]< pares[pos])
+                pos=j;
+        }
+        else
+        {
+            if(pares[j]> pares[pos])
+                pos=j;
+        }
+    }
+
+    if(pos != i)
+    {
+        int temp = pares[i];
+        pares[i]= pares[pos];
+        pares[pos]=temp;
+    }
+}
+
+Console.WriteLine($"Pares: {string.Join(" ", pares)}");
+
+//Ordenar Impares
+
+for (int i = 0; i < impares.Length-1; i++)
+{
+    int pos = i;
+
+    for (int j = i+1; j < impares.Length; j++)
+    {
+        if (orden_imp == 1)
+        {
+            if(impares[j]< impares[pos])
+                pos=j;
+        }
+        else
+        {
+            if(impares[j]> impares[pos])
+                pos=j;
+        }
+    }
+
+    if(pos != i)
+    {
+        int temp = impares[i];
+        impares[i]= impares[pos];
+        impares[pos]=temp;
+    }
+}
+
+Console.WriteLine($"Impares: {string.Join(" ", impares)}");
+
+int[] resultado = new int[n];
+int k=0;
+for (int i = 0; i < pares.Length; i++)
+{
+    resultado[k]=pares[i];
+    k++;
+}
+
+for(int i=0; i< impares.Length; i++)
+{
+    resultado[k]=impares[i];
+    k++;
+}
+
+Console.WriteLine($"Arreglo ordenado: {string.Join(" ", resultado)}");
 ```
 
 ---
