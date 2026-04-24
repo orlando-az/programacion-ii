@@ -168,7 +168,41 @@ int[,] numeros = {
 4       5       6
 7       8       9
 ```
+```csharp
+int [,] numeros = new int [5,4];
 
+int filas= numeros.GetLength(0);
+int columnas= numeros.GetLength(1);
+
+
+Console.WriteLine($"Filas:{filas}");
+Console.WriteLine($"Columnas:{columnas}");
+Console.WriteLine($"Matriz:{numeros.Length}");
+
+Ejercicio 1
+
+int [,] numeros =
+{
+    {1,2,3,5},
+    {4,5,6,6},
+    {7,8,9,7},
+    {7,8,9,7},
+    {7,8,9,7}
+};
+
+int filas=numeros.GetLength(0);
+int columnas= numeros.GetLength(1);
+
+for (int i = 0; i < filas; i++)
+{
+    for (int j = 0; j < columnas; j++)
+    {
+        Console.Write($"{numeros[i,j]} ");
+    }
+    Console.WriteLine();
+}
+
+```
 ---
 
 ## Ejemplo 2 — Suma de cada fila
@@ -192,7 +226,27 @@ Suma del dia 0: 96
 Suma del dia 1: 82
 Suma del dia 2: 111
 ```
+```csharp
+int [,] temperaturas =
+{ //Ciudades
+    {24,22,30,40}, //Dias
+    {31,25,27,35},
+    {41,30,25,27}
+};
 
+int filas = temperaturas.GetLength(0);
+int columnas = temperaturas.GetLength(1);
+
+for (int i = 0; i < filas; i++)
+{
+    int suma=0;
+    for (int j = 0; j < columnas; j++)
+    {
+        suma= suma + temperaturas[i,j];
+    }
+    Console.WriteLine($"La suma de temperaturas es {suma} Dia {i}");
+}
+```
 ---
 
 ## Ejemplo 3 — Ingresar valores y mostrar la matriz
