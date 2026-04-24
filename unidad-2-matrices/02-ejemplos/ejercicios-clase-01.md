@@ -264,6 +264,30 @@ Ingrese el valor para [0,2]: 8
 Matriz ingresada:
 5       3       8
 ...
+```csharp
+
+int[,] numeros = new int[3,3];
+
+int filas= numeros.GetLength(0);
+int columnas= numeros.GetLength(1);
+
+for (int i = 0; i < filas; i++)
+{
+    for (int j = 0; j < columnas; j++)
+    {
+        Console.WriteLine($"Ingrese el valor para la posición [{i},{j}]");
+        numeros[i,j]= int.Parse(Console.ReadLine());
+    }
+}
+
+for (int i = 0; i < filas; i++)
+{
+    for (int j = 0; j < columnas; j++)
+    {
+        Console.Write($"{numeros[i,j]} \t");
+    }
+    Console.WriteLine();
+}
 ```
 
 ---
