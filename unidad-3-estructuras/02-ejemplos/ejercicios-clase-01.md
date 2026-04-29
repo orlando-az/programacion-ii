@@ -27,7 +27,43 @@ Pensemos en un sistema de recursos humanos. Para cada empleado se necesita guard
 Declarar un struct `Empleado` con campos `nombre`, `cargo`, `salario` y `aniosExperiencia`. Crear dos instancias. Calcular el salario con bono: si tiene más de 5 años de experiencia recibe un 15% extra. Mostrar el salario original y el salario con bono de cada uno.
 
 ```csharp
-// Tu solución aquí
+Empleado[] empleados = new Empleado[2];
+empleados[0]= new Empleado{
+    nombre="Fernado", 
+    cargo="Gerente", 
+    salario=25000, 
+    anioexperiencia=10};
+
+empleados[1]= new Empleado
+{
+    nombre="Felipe",
+    cargo="Sub-gente",
+    salario=15000,
+    anioexperiencia=4
+};
+
+for (int i = 0; i < empleados.Length; i++)
+{
+    double salarioOriginal=0;
+    if(empleados[i].anioexperiencia>5)
+    {
+            salarioOriginal=empleados[i].salario;
+            empleados[i].salario= empleados[i].salario *1.15;
+
+        Console.WriteLine($"Empleado con bono: {empleados[i].nombre} salario bono {empleados[i].salario:F2} salario origal {salarioOriginal}");
+    }
+    else
+    {
+        Console.WriteLine($"Empleado con bono: {empleados[i].nombre} salario {empleados[i].salario}");
+    }
+}
+
+struct Empleado{
+    public string nombre;
+    public string cargo;
+    public double salario;
+    public int anioexperiencia;
+}
 ```
 
 ---
@@ -37,7 +73,58 @@ Declarar un struct `Empleado` con campos `nombre`, `cargo`, `salario` y `aniosEx
 Declarar un struct `Libro` con campos `titulo`, `autor`, `anioPublicacion`, `numeroPaginas` y `precio`. Crear un arreglo de 5 libros con datos definidos. Mostrarlos en tabla y calcular el precio promedio.
 
 ```csharp
-// Tu solución aquí
+Libro[] libros = new Libro[5];
+
+libros[0] = new Libro{
+    titulo="cien anios de soledad", 
+    anioPublicacion=1990, 
+    autor="Gabriel Garcia" ,
+    numeroPaginas=200, 
+    precio=50.99};
+
+libros[1] = new Libro{
+    titulo="momento mori", 
+    anioPublicacion=2020, 
+    autor="Pedro Floes" ,
+    numeroPaginas=180, 
+    precio=80.99};
+
+libros[2] = new Libro{
+    titulo="segunda guerra mundial", 
+    anioPublicacion=2000, 
+    autor="Peter Slovo" ,
+    numeroPaginas=400, 
+    precio=125.80};
+
+libros[3] = new Libro{
+    titulo="Codigo limpio", 
+    anioPublicacion=1999, 
+    autor="Ernesto Torrez" ,
+    numeroPaginas=200, 
+    precio=80.80};
+
+libros[4] = new Libro{
+    titulo="SOLID", 
+    anioPublicacion=1980, 
+    autor="Federico Ittz" ,
+    numeroPaginas=140, 
+    precio=250.70};
+
+double suma=0;
+for (int i = 0; i < libros.Length; i++)
+{
+    suma+= libros[i].precio;
+}
+double promedio= suma/libros.Length;
+Console.WriteLine($"El promedio del precio de los libros es {promedio:F2} y total {libros.Length}");
+struct Libro
+{
+    public string titulo;
+    public string autor;
+    public int anioPublicacion;
+    public int numeroPaginas;
+    public double precio;
+}
 ```
 
 ---
