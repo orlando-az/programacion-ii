@@ -27,7 +27,19 @@ Los **archivos** resuelven ese problema. Un archivo guarda los datos en el disco
 Pedir al usuario que ingrese 4 nombres. Guardarlos en un archivo llamado `nombres.txt`, uno por línea. Confirmar cuántas líneas se escribieron.
 
 ```csharp
-// Tu solución aquí
+StreamWriter datos = new StreamWriter("nombres.txt");
+int filas=0;
+for (int i = 0; i < 4; i++)
+{
+    Console.WriteLine("Introduzca un nombre");
+    string nombre = Console.ReadLine();
+    datos.WriteLine(nombre);
+    filas++;
+}
+
+datos.Close();
+
+Console.WriteLine($"Lineas escritas: {filas}");
 ```
 
 ---
@@ -37,7 +49,18 @@ Pedir al usuario que ingrese 4 nombres. Guardarlos en un archivo llamado `nombre
 Leer el archivo `nombres.txt` creado en el Ejemplo 1 y mostrar cada nombre con su número de línea. Al final mostrar cuántas líneas se leyeron.
 
 ```csharp
-// Tu solución aquí
+StreamReader lectura = new StreamReader("nombres.txt");
+string linea = lectura.ReadLine()!;
+int cont=1;
+while(linea != null)
+{
+    Console.WriteLine($"Número línea: {cont} Contenido: {linea}");
+    linea= lectura.ReadLine()!;
+    cont++;
+}
+
+lectura.Close();
+Console.WriteLine($"Líneas leídas:{cont-1}");
 ```
 
 ---
