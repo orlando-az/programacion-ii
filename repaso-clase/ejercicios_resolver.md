@@ -1,12 +1,5 @@
-# Pre-examen C# — Matrices, Struct y Archivos
-> Nivel avanzado · Sin métodos ni CSV · 9 ejercicios
-
----
-
-## Reglas generales
-- No se permite definir métodos propios (todo va en `Main`)
-- No se usa formato CSV ni `Split(',')`
-- Se permiten: `for`, `while`, `do-while`, `switch`, `StreamReader`, `StreamWriter`, `File.Exists`
+# C# — Matrices, Struct y Archivos
+· 9 ejercicios
 
 ---
 
