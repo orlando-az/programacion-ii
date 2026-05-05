@@ -192,5 +192,3 @@ using (StreamReader sr = new StreamReader("datos.txt"))
 ```
 
 ---
-
-*Pre-examen — C# · Sin métodos · Sin CSV*
