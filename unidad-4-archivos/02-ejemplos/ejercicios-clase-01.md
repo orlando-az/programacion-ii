@@ -80,7 +80,51 @@ Verificar si el archivo `nombres.txt` existe. Si existe, agregar 2 nombres más 
 Dado un arreglo de 3 productos (nombre, precio, stock), guardarlo en un archivo `productos.txt` con los campos separados por coma. Luego leer el archivo, reconstruir el arreglo y mostrar los datos en tabla.
 
 ```csharp
-// Tu solución aquí
+int total=3;
+
+Producto[] productos = new Producto[total];
+
+productos[0]= new Producto{nombre="mouse",precio=50.60,stock=10};
+productos[1]= new Producto{nombre="teclado",precio=200,stock=5};
+productos[2]= new Producto{nombre="monitor",precio=1200,stock=200};
+
+StreamWriter escrito = new StreamWriter("producto.txt");
+
+for (int i = 0; i < total; i++)
+{
+    escrito.WriteLine($"{productos[i].nombre},{productos[i].precio},{productos[i].stock}");
+}
+Console.WriteLine("Datos Guardados");
+escrito.Close();
+
+StreamReader lector = new StreamReader("producto.txt");
+string linea = lector.ReadLine();
+Producto[] recuperar = new Producto[total];
+int pos=0;
+while(linea!= null)
+{
+    string[] partes = linea.Split(",");
+
+        recuperar[pos].nombre = partes[0];
+        recuperar[pos].precio= double.Parse(partes[1]);
+        recuperar[pos].stock= int.Parse(partes[2]);
+        pos++;
+        linea= lector.ReadLine();
+    
+}
+
+lector.Close();
+
+for (int i = 0; i < recuperar.Length; i++)
+{
+    Console.WriteLine($"{recuperar[i].nombre}, {recuperar[i].precio},{recuperar[i].stock}");
+}
+struct Producto
+{
+    public string nombre;
+    public double precio;
+    public int stock;
+}
 ```
 
 ---
@@ -90,7 +134,77 @@ Dado un arreglo de 3 productos (nombre, precio, stock), guardarlo en un archivo 
 Usar el archivo `productos.txt` del Ejemplo 4. Leer y mostrar el stock actual. Pedir al usuario el nombre de un producto y el nuevo stock. Actualizar el arreglo, reescribir el archivo y mostrar el resultado final.
 
 ```csharp
-// Tu solución aquí
+int total = 3;
+Producto[] recuperados = new Producto[total];
+
+// Leer archivo
+StreamReader lector = new StreamReader("productos.txt");
+string linea        = lector.ReadLine();
+int pos             = 0;
+
+while (linea != null && pos < total)
+{
+    string[] partes         = linea.Split(',');
+    recuperados[pos].nombre = partes[0];
+    recuperados[pos].precio = double.Parse(partes[1]);
+    recuperados[pos].stock  = int.Parse(partes[2]);
+    pos++;
+    linea = lector.ReadLine();
+}
+
+lector.Close();
+
+// Mostrar stock actual
+Console.WriteLine("Stock actual:");
+Console.WriteLine($"{"Nombre",-15} {"Precio",-10} {"Stock"}");
+
+for (int i = 0; i < pos; i++)
+    Console.WriteLine($"{recuperados[i].nombre,-15} {recuperados[i].precio,-10:F2} {recuperados[i].stock}");
+
+// Actualizar
+Console.Write("\n¿Qué producto desea actualizar? ");
+string buscar     = Console.ReadLine();
+bool   encontrado = false;
+
+for (int i = 0; i < pos; i++)
+{
+    if (string.Compare(recuperados[i].nombre, buscar, true) == 0)
+    {
+        Console.Write("¿Nuevo stock? ");
+        recuperados[i].stock = int.Parse(Console.ReadLine());
+        encontrado = true;
+    }
+}
+
+if (!encontrado)
+{
+    Console.WriteLine("Producto no encontrado.");
+}
+else
+{
+    // Reescribir archivo
+    StreamWriter escritor = new StreamWriter("productos.txt");
+
+    for (int i = 0; i < pos; i++)
+        escritor.WriteLine($"{recuperados[i].nombre},{recuperados[i].precio},{recuperados[i].stock}");
+
+    escritor.Close();
+
+    Console.WriteLine("\nStock actualizado:");
+    Console.WriteLine($"{"Nombre",-15} {"Precio",-10} {"Stock"}");
+
+    for (int i = 0; i < pos; i++)
+        Console.WriteLine($"{recuperados[i].nombre,-15} {recuperados[i].precio,-10:F2} {recuperados[i].stock}");
+
+    Console.WriteLine("\nArchivo actualizado.");
+}
+
+struct Producto
+{
+    public string nombre;
+    public double precio;
+    public int    stock;
+}
 ```
 
 ---
